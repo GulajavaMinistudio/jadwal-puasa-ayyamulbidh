@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tracker puasa Ayyamul Bidh dengan statistik"
+    />
+    <title>Tracker - Puasa Ayyamul Bidh</title>
+
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <script type="module" crossorigin src="/jadwal-puasa-ayyamulbidh/assets/tracker-laD9pUXm.js"></script>
+    <link rel="modulepreload" crossorigin href="/jadwal-puasa-ayyamulbidh/assets/main-BwwENJvz.js">
+    <link rel="stylesheet" crossorigin href="/jadwal-puasa-ayyamulbidh/assets/components-C5ZWSLAf.css">
+    <script type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();window.__vite_is_modern_browser=true</script>
+    <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+  <link rel="manifest" href="/jadwal-puasa-ayyamulbidh/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/jadwal-puasa-ayyamulbidh/registerSW.js"></script></head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+          <i class="bi bi-moon-stars-fill me-2"></i>
+          Puasa Ayyamul Bidh
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="bi bi-house-fill"></i> Beranda
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kalender.html">
+                <i class="bi bi-calendar3"></i> Kalender
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="tracker.html">
+                <i class="bi bi-check2-square"></i> Tracker
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="jadwal-shalat.html">
+                <i class="bi bi-clock"></i> Jadwal Shalat
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="panduan.html">
+                <i class="bi bi-book"></i> Panduan
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pengaturan.html">
+                <i class="bi bi-gear"></i> Pengaturan
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-4">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4">
+            <i class="bi bi-check2-square-fill text-success"></i>
+            Tracker Puasa Ayyamul Bidh
+          </h2>
+        </div>
+      </div>
+
+      <!-- Current Month Tracker -->
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h4 class="card-title mb-4" id="currentMonthTitle">Bulan Ini</h4>
+              <div id="currentMonthTracker">
+                <!-- Will be populated by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics -->
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="card shadow border-0 gradient-card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">
+                <i class="bi bi-graph-up-arrow text-success"></i>
+                Statistik Puasa
+              </h4>
+
+              <div class="row g-3 mb-4">
+                <!-- Total Tahun Ini -->
+                <div class="col-md-4">
+                  <div class="text-center p-3 bg-white rounded">
+                    <h2 class="fw-bold mb-2" id="totalYearly">0/36</h2>
+                    <p class="text-muted mb-0">Total Tahun Ini</p>
+                    <div class="progress mt-2" style="height: 8px">
+                      <div
+                        class="progress-bar bg-success"
+                        id="yearlyProgressBar"
+                        style="width: 0%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bulan Complete -->
+                <div class="col-md-4">
+                  <div class="text-center p-3 bg-white rounded">
+                    <h2 class="fw-bold mb-2" id="completeMonths">0/12</h2>
+                    <p class="text-muted mb-0">Bulan Lengkap</p>
+                  </div>
+                </div>
+
+                <!-- Streak -->
+                <div class="col-md-4">
+                  <div class="text-center p-3 bg-white rounded">
+                    <h2 class="fw-bold mb-2">
+                      <i class="bi bi-fire text-warning"></i>
+                      <span id="currentStreak">0</span>
+                    </h2>
+                    <p class="text-muted mb-0">Streak (bulan)</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Monthly Chart -->
+              <div class="chart-container">
+                <h5 class="mb-3">Progress Per Bulan</h5>
+                <div id="monthlyChart">
+                  <!-- Will be populated by JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- History Accordion -->
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <h4 class="mb-3">
+            <i class="bi bi-clock-history text-info"></i>
+            Riwayat Puasa
+          </h4>
+          <div class="accordion" id="historyAccordion">
+            <!-- Will be populated by JS -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+      <div class="container text-center">
+        <p class="text-muted mb-0">
+          &copy; <span id="currentYear">2025</span> Puasa Ayyamul Bidh |
+          Dikembangkan oleh
+          <strong>Gulajava Ministudio</strong>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript Modules -->
+
+    <!-- Tracker Page Script -->
+    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+    <script nomodule crossorigin id="vite-legacy-polyfill" src="/jadwal-puasa-ayyamulbidh/assets/polyfills-legacy-Cvna3ZM_.js"></script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="/jadwal-puasa-ayyamulbidh/assets/tracker-legacy-C3JUsnTh.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+  </body>
+</html>

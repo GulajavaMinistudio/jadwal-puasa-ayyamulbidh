@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pengaturan aplikasi Puasa Ayyamul Bidh" />
+    <title>Pengaturan - Puasa Ayyamul Bidh</title>
+
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <script type="module" crossorigin src="/jadwal-puasa-ayyamulbidh/assets/pengaturan-C-ASYDuC.js"></script>
+    <link rel="modulepreload" crossorigin href="/jadwal-puasa-ayyamulbidh/assets/main-BwwENJvz.js">
+    <link rel="stylesheet" crossorigin href="/jadwal-puasa-ayyamulbidh/assets/components-C5ZWSLAf.css">
+    <script type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();window.__vite_is_modern_browser=true</script>
+    <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+  <link rel="manifest" href="/jadwal-puasa-ayyamulbidh/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/jadwal-puasa-ayyamulbidh/registerSW.js"></script></head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+          <i class="bi bi-moon-stars-fill me-2"></i>
+          Puasa Ayyamul Bidh
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="bi bi-house-fill"></i> Beranda
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kalender.html">
+                <i class="bi bi-calendar3"></i> Kalender
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tracker.html">
+                <i class="bi bi-check2-square"></i> Tracker
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="jadwal-shalat.html">
+                <i class="bi bi-clock"></i> Jadwal Shalat
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="panduan.html">
+                <i class="bi bi-book"></i> Panduan
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="pengaturan.html">
+                <i class="bi bi-gear"></i> Pengaturan
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-4">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4">
+            <i class="bi bi-gear-fill text-secondary"></i>
+            Pengaturan
+          </h2>
+        </div>
+      </div>
+
+      <!-- Location Settings -->
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h4 class="card-title mb-4">
+                <i class="bi bi-geo-alt-fill text-danger"></i>
+                Pengaturan Lokasi
+              </h4>
+
+              <form id="locationForm">
+                <div class="mb-3">
+                  <label for="citySelect" class="form-label">Pilih Kota</label>
+                  <select class="form-select" id="citySelect">
+                    <option value="">-- Pilih Kota --</option>
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="Bandung">Bandung</option>
+                    <option value="Surabaya">Surabaya</option>
+                    <option value="Medan">Medan</option>
+                    <option value="Semarang">Semarang</option>
+                    <option value="Makassar">Makassar</option>
+                    <option value="Palembang">Palembang</option>
+                    <option value="Yogyakarta">Yogyakarta</option>
+                    <option value="Malang">Malang</option>
+                    <option value="Bogor">Bogor</option>
+                    <option value="Depok">Depok</option>
+                    <option value="Tangerang">Tangerang</option>
+                    <option value="Bekasi">Bekasi</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="autoDetectBtn"
+                  >
+                    <i class="bi bi-geo-alt"></i> Deteksi Lokasi Otomatis
+                  </button>
+                  <div id="gpsStatus" class="mt-2 small"></div>
+                </div>
+
+                <hr class="my-4" />
+
+                <div class="alert alert-info">
+                  <small
+                    ><i class="bi bi-info-circle"></i> Lokasi saat ini:
+                    <strong id="currentLocation">Belum diatur</strong></small
+                  >
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                  <i class="bi bi-check-lg"></i> Simpan Lokasi
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prayer Method Settings -->
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h4 class="card-title mb-4">
+                <i class="bi bi-clock-fill text-info"></i>
+                Metode Kalkulasi Waktu Shalat
+              </h4>
+
+              <form id="methodForm">
+                <div class="mb-3">
+                  <label for="methodSelect" class="form-label"
+                    >Pilih Metode</label
+                  >
+                  <select class="form-select" id="methodSelect">
+                    <option value="99" selected>
+                      Kementerian Agama RI (Akurat - Recommended)
+                    </option>
+                    <option value="20">
+                      Kementerian Agama RI (Standard Aladhan)
+                    </option>
+                    <option value="3">Muslim World League (MWL)</option>
+                    <option value="2">
+                      Islamic Society of North America (ISNA)
+                    </option>
+                    <option value="5">
+                      Egyptian General Authority of Survey
+                    </option>
+                    <option value="4">Umm Al-Qura University, Makkah</option>
+                    <option value="1">
+                      University of Islamic Sciences, Karachi
+                    </option>
+                    <option value="7">
+                      Institute of Geophysics, University of Tehran
+                    </option>
+                  </select>
+                  <div class="form-text">
+                    <small
+                      >Untuk Indonesia, gunakan metode Kementerian Agama
+                      RI.</small
+                    >
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                  <i class="bi bi-check-lg"></i> Simpan Metode
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Management -->
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h4 class="card-title mb-4">
+                <i class="bi bi-database-fill text-warning"></i>
+                Manajemen Data
+              </h4>
+
+              <div class="mb-3">
+                <button type="button" class="btn btn-primary" id="exportBtn">
+                  <i class="bi bi-download"></i> Ekspor Data
+                </button>
+                <small class="form-text d-block mt-2"
+                  >Download semua data puasa Anda dalam format JSON</small
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="importFile" class="form-label">Impor Data</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="importFile"
+                  accept=".json"
+                />
+                <small class="form-text"
+                  >Upload file JSON yang telah di-export sebelumnya</small
+                >
+              </div>
+
+              <hr class="my-4" />
+
+              <div class="alert alert-danger">
+                <h6 class="alert-heading">
+                  <i class="bi bi-exclamation-triangle-fill"></i> Zona Bahaya
+                </h6>
+                <p class="mb-2">
+                  Reset akan menghapus SEMUA data puasa yang telah Anda catat.
+                  Tindakan ini tidak dapat dibatalkan!
+                </p>
+                <button type="button" class="btn btn-danger" id="resetBtn">
+                  <i class="bi bi-trash"></i> Reset Semua Data
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h4 class="card-title mb-4">
+                <i class="bi bi-info-circle-fill text-success"></i>
+                Tentang Aplikasi
+              </h4>
+
+              <table class="table table-borderless">
+                <tr>
+                  <td class="fw-bold" style="width: 200px">Nama Aplikasi</td>
+                  <td>Puasa Ayyamul Bidh</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Versi</td>
+                  <td>1.0.0</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Dibuat Oleh</td>
+                  <td>
+                    <a
+                      href="https://github.com/GulajavaMinistudio"
+                      target="_blank"
+                      >Gulajava Ministudio</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Dibuat Dengan</td>
+                  <td>
+                    Vibe Spec Coding with Google Antigravity, Gemini AI, dan
+                    Claude Sonnet
+                  </td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Sumber Data</td>
+                  <td>
+                    <a href="https://aladhan.com" target="_blank"
+                      >Aladhan API</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Framework CSS</td>
+                  <td>Bootstrap 5.3.8</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Tahun</td>
+                  <td>2025</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+      <div class="container text-center">
+        <p class="text-muted mb-0">
+          &copy; <span id="currentYear"></span>2025</span> Puasa Ayyamul Bidh | Dikembangkan oleh
+          <strong>Gulajava Ministudio</strong>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title">Konfirmasi Reset</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Apakah Anda yakin ingin menghapus SEMUA data?</p>
+            <p class="fw-bold text-danger">
+              Tindakan ini tidak dapat dibatalkan!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Batal
+            </button>
+            <button type="button" class="btn btn-danger" id="confirmResetBtn">
+              Ya, Hapus Semua Data
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript Modules -->
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Settings Page Script -->
+    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+    <script nomodule crossorigin id="vite-legacy-polyfill" src="/jadwal-puasa-ayyamulbidh/assets/polyfills-legacy-Cvna3ZM_.js"></script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="/jadwal-puasa-ayyamulbidh/assets/pengaturan-legacy-IS1Q4Zgc.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+  </body>
+</html>
